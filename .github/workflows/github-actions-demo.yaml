@@ -1,17 +1,17 @@
 name: Github Actions Demo
-  on: [push]
-  jobs:
-    Explore-Github-Actions:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "The job was triggered by ${{ github.event.name}} event"
-        - run: echo "The job is running on ${{runner.os}} server"
-        - run: echo "Branch name ${{ github.ref }} and repo is ${{github.repository}}"
-        - name: Check out repository code
-          uses: actions/checkout@v3
-        - run: echo "The ${{github.repository}} cloned"
-        - run: The worker is now running files in the repo.
-        - name: List Files in the repo
-          run: |
-            ls ${{github.workspace}}
-        - run: echo "This job status is ${{ job.status }}"
+on: [push]
+jobs:
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered by ${{ github.event.name}} event"
+      - run: echo "The job is running on ${{runner.os}} server"
+      - run: echo "Branch name ${{ github.ref }} and repo is ${{github.repository}}"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{github.repository}} cloned"
+      - run: The worker is now running files in the repo.
+      - name: List Files in the repo
+        run: |
+          ls ${{github.workspace}}
+      - run: echo "This job status is ${{ job.status }}"
